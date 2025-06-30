@@ -11,7 +11,7 @@ public class SetOfflineUserEventHandler(IOnlineChatService onlineChatService) : 
         try
         {
             var eventMessage = messageEnvelope.Message;
-            await onlineChatService.EndChat(eventMessage.UserId, cancellationToken);
+            await onlineChatService.SetOfflineUser(eventMessage.UserId, cancellationToken);
             return MessageProcessStatus.Success();
         }
         catch (Exception e)
